@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|Write|Glob|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 hooks/claudeignore-guard.py",
+            "timeout": 10,
+            "statusMessage": "Checking .claudeignore..."
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 hooks/hook-guardian.py",
+            "timeout": 10,
+            "statusMessage": "Checking safety boundary..."
+          }
+        ]
+      }
+    ]
+  }
+}

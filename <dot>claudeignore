@@ -1,0 +1,97 @@
+# ===========================
+# .claudeignore
+# ===========================
+# Files and directories that Claude should NEVER read, edit, or reference.
+# Uses .gitignore syntax (glob patterns). One pattern per line.
+
+# ----- OS & Editor Artifacts -----
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ----- Environment & Secrets -----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+credentials.json
+secrets.json
+service-account*.json
+
+# ----- Dependencies -----
+node_modules/
+vendor/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# ----- Build Outputs -----
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+coverage/
+*.min.js
+*.min.css
+*.map
+
+# ----- Lock Files (read-heavy, low signal) -----
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+Pipfile.lock
+poetry.lock
+composer.lock
+Gemfile.lock
+
+# ----- IDE & Config -----
+.idea/
+.vscode/
+*.code-workspace
+
+# ----- Logs & Temp -----
+*.log
+logs/
+tmp/
+temp/
+
+# ----- Large / Binary Files -----
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.iso
+*.dmg
+*.exe
+*.dll
+*.so
+*.dylib
+*.wasm
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.mp3
+*.mp4
+*.mov
+*.avi
+*.ttf
+*.woff
+*.woff2
+*.eot
+
+# ----- Git -----
+.git/
