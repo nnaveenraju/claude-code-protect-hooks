@@ -263,6 +263,11 @@ def main():
             "If you need to access it, ask the user to override.",
             file=sys.stderr,
         )
+        print("", file=sys.stderr)
+        print("REQUIRED BEHAVIOR: STOP. Do NOT attempt alternative", file=sys.stderr)
+        print("approaches to access this file. Do NOT say 'let me", file=sys.stderr)
+        print("work around it'. Report this block to the user and", file=sys.stderr)
+        print("wait for their instructions.", file=sys.stderr)
         print("=" * 60, file=sys.stderr)
         sys.exit(2)  # Hard block
 

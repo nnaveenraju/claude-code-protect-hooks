@@ -110,6 +110,11 @@ def main():
                 file=sys.stderr,
             )
             print("Only the user may edit protected files.", file=sys.stderr)
+            print("", file=sys.stderr)
+            print("REQUIRED BEHAVIOR: STOP. Do NOT attempt alternative", file=sys.stderr)
+            print("approaches to achieve the same result. Do NOT say", file=sys.stderr)
+            print("'let me work around it'. Report this block to the", file=sys.stderr)
+            print("user and wait for their instructions.", file=sys.stderr)
             print("=" * 60, file=sys.stderr)
             sys.exit(2)
 
@@ -126,7 +131,11 @@ def main():
                 "\nThis command would bypass safety hooks or destroy work.",
                 file=sys.stderr,
             )
-            print("Ask the user to run it manually if needed.", file=sys.stderr)
+            print("", file=sys.stderr)
+            print("REQUIRED BEHAVIOR: STOP. Do NOT attempt alternative", file=sys.stderr)
+            print("approaches to achieve the same result. Do NOT say", file=sys.stderr)
+            print("'let me work around it'. Report this block to the", file=sys.stderr)
+            print("user and wait for their instructions.", file=sys.stderr)
             print("=" * 60, file=sys.stderr)
             sys.exit(2)
 
