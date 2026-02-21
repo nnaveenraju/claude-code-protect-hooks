@@ -18,21 +18,6 @@ Prevents Claude from disabling its own safety net. Protects three attack surface
 - **Bypass flags** — catches `--no-verify`, `--no-gpg-sign`, and similar
 - **Destructive commands** — blocks `git reset --hard`, `git push --force`, `git clean -f`, `rm`/`mv` on hook files, `sed`/`awk` on settings, and shell redirects over protected files
 
-### `secret-scanner.py` — Secret Detection
-**Event:** PreToolUse (Bash)
-
-Intercepts `git commit` and `git add` commands, scans staged files for secrets. Detects AWS keys, hardcoded passwords, JWT tokens, private keys, GitHub tokens, bearer tokens, and database connection strings with embedded credentials.
-
-### `story-validator.py` — Story Structure Validation
-**Event:** UserPromptSubmit
-
-Triggers on prompts containing `execute story`, `implement story`, or `/implement`. Validates that the story includes required sections (Story, Context, Acceptance Criteria, Technical Notes, Definition of Done) and required subsections before allowing execution.
-
-### `code-quality.py` — Post-Write Quality Checks
-**Event:** PostToolUse (Edit, Write)
-
-Runs after every file modification on code files (`.ts`, `.tsx`, `.js`, `.jsx`, `.py`, `.cs`). Checks for KISS violations (functions over 50 lines or 5+ parameters), DRY violations (8+ duplicate consecutive lines), and YAGNI violations (large commented-out blocks, excessive TODOs).
-
 ## Exit Codes
 
 All hooks follow the same convention:
