@@ -1,4 +1,4 @@
-{
+  {
   "hooks": {
     "PreToolUse": [
       {
@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 hooks/claudeignore-guard.py",
+            "command": "python3 ~/.claude/hooks/claudeignore-guard.py",
             "timeout": 10,
             "statusMessage": "Checking .claudeignore..."
           }
@@ -22,7 +22,31 @@
             "statusMessage": "Checking safety boundary..."
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/secret-scanner.py",
+            "timeout": 30,
+            "statusMessage": "Scanning for secrets..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/code-quality.py",
+            "timeout": 15,
+            "statusMessage": "Checking code quality..."
+          }
+        ]
       }
     ]
-  }
+  },
 }
